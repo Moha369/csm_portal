@@ -3,6 +3,10 @@ body {
     color: #333333;
 }
 
+.client-info {
+    font-family: menlo, monospace;
+}
+
 h1,
 h2,
 h3,
@@ -86,3 +90,94 @@ a.article-title:hover {
 .account-heading {
     font-size: 2.5rem;
 }
+
+/* -- ############################
+MyStyles outside of Corys Tutorial
+################################### -- */
+.btn {
+    font-size: 0.825rem;
+}
+
+.login-home {
+    background-color: #F4F6F9;
+
+    .login_block {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 380px;
+        padding: 20px 0px 0px;
+        transition: all 0.25s ease 0s;
+    }
+
+    .login_logo {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 180px;
+        max-height: 113px;
+        display: block;
+    }
+
+    .login_block_inner {
+        width: 380px;
+        color: rgb(22, 50, 92);
+        margin: 0px auto;
+        padding: 1.25rem;
+        border-radius: 0.25rem;
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgb(216, 221, 230);
+        border-image: initial;
+        background-color: #fff;
+    }
+
+    .form-signin {
+        width: 100%;
+        max-width: 380px;
+        padding: 15px;
+        margin: auto;
+        border: #333;
+    }
+
+    .form-signin .checkbox {
+        font-weight: 400;
+    }
+
+    .form-signin .form-control {
+        position: relative;
+        box-sizing: border-box;
+        height: auto;
+        padding: 10px;
+        font-size: 0.8125rem;
+    }
+
+    .form-signin .form-control:focus {
+        z-index: 2;
+    }
+
+    .form-signin input[type="email"] {
+        margin-bottom: -1px;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+
+    .form-signin input[type="password"] {
+        margin-bottom: 10px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+
+    .col-form-label {
+        font-size: 80%;
+        font-weight: 400;
+    }
+    
+}
+
+
+
+
+
+
+

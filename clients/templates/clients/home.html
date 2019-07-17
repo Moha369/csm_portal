@@ -10,12 +10,12 @@
                 <small class="text-muted">{{ post.date_posted|date:'F d, Y' }}</small>
             </div>
             <h2><a href="#" class="article-title">{{ post.client_name }}</a></h2>
-            <p class="article-content">Client ID: {{ post.client_ID }}</p>
-            <p class="article-content">Password: {{ post.client_password }}</p>
-            <p class="article-content">FTP url: {{ post.client_FTP }}</p>
+            <p class="article-content">Client ID: <span class="client-info">{{ post.client_ID }}</span></p>
+            <p class="article-content">Password: <span class="client-info">{{ post.client_password }}</span></p>
+            <p class="article-content">FTP url: <span class="client-info">{{ post.client_FTP }}</span></p>
             <h4>API Creds:</h4>
-            <p class="article-content">Login: {{ post.client_API_login }}</p>
-            <p class="article-content">Password: {{ post.client_API_password }}</p>
+            <p class="article-content">Login: <span class="client-info">{{ post.client_API_login }}</span></p>
+            <p class="article-content">Password: <span class="client-info">{{ post.client_API_password }}</span></p>
 
             <a href="https://dashboard.pixalate.com/reports.html?clientId={{ post.client_ID }}&reportId=overview">
                 <button type="button" class="btn btn-primary">DASHBOARD</button>

@@ -19,38 +19,13 @@
     {% endif %}
 </head>
 
-<body>
-    <!-- navbar start -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
-        <div class="container">
-            <a class="navbar-brand" href="#">CSM Portal</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="{% url 'clients-home' %}">Home <span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link" href="{% url 'clients-about' %}">About</a>
-                    <a class="nav-item nav-link" href="#">Login</a>
-                    <a class="nav-item nav-link" href="#" >Register</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <!-- navbar end -->
+<body class="login-home">
 
     <!-- main content start -->
-    <main role='main' class="container">
-        <div class="row">
-            <div class="col">
-                {% if messages %}
-                    {% for message in messages %}
-                        <div class="alert alert-{{ message.tags }}">
-                            {{ message }}
-                        </div>
-                    {% endfor %}
-                {% endif %}
+    <main role='main' class="d-flex align-items-center">
+        <div class="login_block">
+            <img class="mb-4 login_logo" src="{% static 'clients/img/pixalate-full-logo.png' %}" alt="">
+            <div class="login_block_inner">
                 {% block content %}{% endblock %}
             </div>
         </div>
@@ -74,3 +49,4 @@
 </body>
 
 </html>
+
