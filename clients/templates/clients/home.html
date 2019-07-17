@@ -1,0 +1,27 @@
+{% extends 'clients/base.html' %}
+
+{% block content %}
+
+    {% for post in posts %}
+    <article class="media content-section">
+        <div class="media-body">
+            <div class="article-metadata">
+                <a href="#" class="mr-2">{{ post.author }}</a>
+                <small class="text-muted">{{ post.date_posted|date:'F d, Y' }}</small>
+            </div>
+            <h2><a href="#" class="article-title text-uppercase">{{ post.client_name }}</a></h2>
+
+            <p class="article-content">Client ID: {{ post.client_ID }}</p>
+            <p class="article-content">Password: {{ post.client_password }}</p>
+
+            <p class="article-content">FTP url: {{ post.client_FTP }}</p>
+
+            <h4>API Creds:</h4>
+            <p class="article-content">Login: {{ post.client_API_login }}</p>
+            <p class="article-content">Password: {{ post.client_API_password }}</p>
+
+        </div>
+    </article>
+    {% endfor %}
+
+{% endblock content %}
