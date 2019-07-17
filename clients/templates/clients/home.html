@@ -9,13 +9,10 @@
                 <a href="#" class="mr-2">{{ post.author }}</a>
                 <small class="text-muted">{{ post.date_posted|date:'F d, Y' }}</small>
             </div>
-            <h2><a href="#" class="article-title text-uppercase">{{ post.client_name }}</a></h2>
-
+            <h2><a href="#" class="article-title">{{ post.client_name }}</a></h2>
             <p class="article-content">Client ID: {{ post.client_ID }}</p>
             <p class="article-content">Password: {{ post.client_password }}</p>
-
             <p class="article-content">FTP url: {{ post.client_FTP }}</p>
-
             <h4>API Creds:</h4>
             <p class="article-content">Login: {{ post.client_API_login }}</p>
             <p class="article-content">Password: {{ post.client_API_password }}</p>
@@ -25,3 +22,24 @@
     {% endfor %}
 
 {% endblock content %}
+
+<!-- <table class="table">
+        <thead>
+            <tr>
+                <th scope="col" class="text-uppercase">id</th>
+                <th scope="col" class="text-capitalize">name</th>
+                <th scope="col" class="text-capitalize">created</th>
+                <th scope="col" class="text-capitalize">author</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for post in posts %}
+            <tr>
+                <td class="text-uppercase">{{ post.client_ID }}</td>
+                <td><a href="#">{{ post.client_name }}</a></td>
+                <td>{{ post.date_posted|date:'F d, Y' }}</td>
+                <td>{{ post.author }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table> -->
