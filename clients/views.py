@@ -10,6 +10,5 @@ def home(request):
 
 
 def about(request):
-
     return render(request, 'clients/about.html', {'title': 'about!!'})
 

@@ -43,7 +43,7 @@
     <!-- main content start -->
     <main role='main' class="container">
         <div class="row">
-            <div class="col-md-8">
+            <div class="col">
                 {% if messages %}
                     {% for message in messages %}
                         <div class="alert alert-{{ message.tags }}">
@@ -52,18 +52,6 @@
                     {% endfor %}
                 {% endif %}
                 {% block content %}{% endblock %}
-            </div>
-            <div class="col-md-4">
-                <div class="content-section">
-                    <h3>SideBar</h3>
-                    <p class="text-muted">something goes here...
-                        <ul class="list-group">
-                            <li class="list-group-item list-group-item-light">something</li>
-                            <li class="list-group-item list-group-item-light">something else</li>
-                            <li class="list-group-item list-group-item-light">something more</li>
-                        </ul>
-                    </p>
-                </div>
             </div>
         </div>
     </main>
