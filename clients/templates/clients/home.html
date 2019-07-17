@@ -17,6 +17,10 @@
             <p class="article-content">Login: {{ post.client_API_login }}</p>
             <p class="article-content">Password: {{ post.client_API_password }}</p>
 
+            <a href="https://dashboard.pixalate.com/reports.html?clientId={{ post.client_ID }}&reportId=overview">
+                <button type="button" class="btn btn-primary">DASHBOARD</button>
+            </a>
+
         </div>
     </article>
     {% endfor %}
