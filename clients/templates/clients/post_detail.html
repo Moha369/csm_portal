@@ -1,0 +1,28 @@
+{% extends 'clients/base.html' %}
+
+{% block content %}
+
+<article class="media content-section">
+    <div class="media-body">
+        <div class="article-metadata">
+            <small>created by: <a href="#" class="mr-2">{{ object.author }}</a></small>
+            <small class="text-muted">{{ object.date_posted|date:'F d, Y' }}</small>
+        </div>
+        <h2>{{ object.client_name }}</h2>
+        <p class="article-content">Client ID: <span class="client-info">{{ object.client_ID }}</span></p>
+        <p class="article-content">Password: <span class="client-info">{{ object.client_password }}</span></p>
+        <p class="article-content">FTP url: <span class="client-info">{{ object.client_FTP }}</span></p>
+        <h4>API Creds:</h4>
+        <p class="article-content">Login: <span class="client-info">{{ object.client_API_login }}</span></p>
+        <p class="article-content">Password: <span class="client-info">{{ object.client_API_password }}</span></p>
+
+        <div class="buttons">
+            {% if object.author == user %}
+                <a class="btn btn-secondary btn-sm my-1" href="{% url 'post-update' object.id %}">Update</a>
+                <a class="btn btn-danger btn-sm my-1" href="{% url 'post-delete' object.id %}">Delete</a>
+            {% endif %}
+        </div>
+    </div>
+</article>
+
+{% endblock content %}
