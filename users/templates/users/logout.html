@@ -3,9 +3,9 @@
 {% block content %}
 <h2>You have been logged out.</h2>
 <div class="border-top pt-3">
-    <small class="text-muted">
-        <a href="{% url 'login' %}" class="">Log In</a>
-    </small>
+    <a href="{% url 'login' %}" class="">
+        <button class="btn btn-danger btn-block" type="submit">Login</button>
+    </a>
 </div>
 
 {% endblock content %}
