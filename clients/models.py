@@ -8,6 +8,7 @@ class Post(models.Model):
     client_name = models.CharField(max_length=100)
     client_ID = models.CharField(max_length=100)
     client_password = models.CharField(max_length=100)
+    client_products = models.CharField(max_length=100, default="")
     client_FTP = models.CharField(max_length=100)
     client_API_login = models.CharField(max_length=100)
     client_API_password = models.CharField(max_length=100)

@@ -29,6 +29,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     fields = [
         'client_name',
         'client_ID',
+        'client_products',
         'client_password',
         'client_FTP',
         'client_API_login',
@@ -45,6 +46,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     fields = [
         'client_name',
         'client_ID',
+        'client_products',
         'client_password',
         'client_FTP',
         'client_API_login',
