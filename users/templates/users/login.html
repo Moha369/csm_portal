@@ -1,8 +1,5 @@
 {% extends 'clients/login_home.html' %}
 
-{% load socialaccount %}
-{% providers_media_js %}
-
 {% load crispy_forms_tags %}
 
 {% block content %}
@@ -16,16 +13,9 @@
         <button class="btn btn-danger btn-block" type="submit">Login</button>
     </div>
     <div class="border-top pt-3">
-        <!-- <small class="text-muted">
+        <small class="text-muted">
             Need an account? <a href="{% url 'register' %}" class="ml-2">Sign Up Now</a>
-        </small> -->
-
-        <div class="form-group">
-            <a href="{% provider_login_url 'google' %}">
-                <button class="btn btn-danger btn-block" type="submit">Login with Google</button>
-            </a>
-            
-        </div>
+        </small>
     </div>
 </form>
 
