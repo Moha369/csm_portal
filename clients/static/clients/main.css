@@ -1,42 +1,90 @@
+/* -- Globals --*/
+html,
+.root {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+h1 {
+  font-size: 4.25rem;
+  line-height: 4.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+h2 {
+  font-size: 2.625rem;
+  line-height: 3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-size: 1.625rem;
+  line-height: 3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0rem;
+}
+
+h4 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0rem;
+}
+
+h5 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0rem;
+}
+
+p,
+ul,
+ol,
+pre,
+table,
+blockquote {
+  margin-top: 0rem;
+  margin-bottom: 1.5rem;
+}
+
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+
+.btn {
+  font-size: 0.825rem;
+}
+
 body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  max-width: 560px;
+  margin: auto;
   background: #F4F6F9;
   color: #333333;
+  /* -- navigation --*/
+  /* -- home page --*/
+  /*-- client page --*/
 }
 
-.client-info {
-  font-family: menlo, monospace;
+body .navbar-brand {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: #444444;
+body .table {
+  font-size: 0.825rem;
 }
 
-ul {
-  margin: 0;
-}
-
-.bg-steel {
-  background-color: #5f788a;
-}
-
-.site-header .navbar-nav .nav-link {
-  color: #cbd5db;
-}
-
-.site-header .navbar-nav .nav-link:hover {
-  color: #ffffff;
-}
-
-.site-header .navbar-nav .nav-link.active {
-  font-weight: 500;
-}
-
-.content-section {
+body .content-section {
   background: #ffffff;
   padding: 10px 20px;
   border: 1px solid #dddddd;
@@ -44,60 +92,16 @@ ul {
   margin-bottom: 20px;
 }
 
-.article-title {
-  color: #444444;
+body .client-info {
+  font-family: menlo, monospace;
 }
 
-a.article-title:hover {
-  color: #428bca;
-  text-decoration: none;
+body .client-name {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
 }
 
-.article-content {
-  white-space: pre-line;
-}
-
-.article-img {
-  height: 65px;
-  width: 65px;
-  margin-right: 16px;
-}
-
-.article-metadata {
-  padding-bottom: 1px;
-  margin-bottom: 4px;
-  border-bottom: 1px solid #e3e3e3;
-}
-
-.article-metadata a:hover {
-  color: #333;
-  text-decoration: none;
-}
-
-.article-svg {
-  width: 25px;
-  height: 25px;
-  vertical-align: middle;
-}
-
-.account-img {
-  height: 125px;
-  width: 125px;
-  margin-right: 20px;
-  margin-bottom: 16px;
-}
-
-.account-heading {
-  font-size: 2.5rem;
-}
-
-/* -- ############################
-MyStyles outside of Corys Tutorial
-################################### -- */
-.btn {
-  font-size: 0.825rem;
-}
-
+/* -- login_home -- */
 .login-home {
   background-color: #F4F6F9;
 }
@@ -175,5 +179,65 @@ MyStyles outside of Corys Tutorial
 .login-home .col-form-label {
   font-size: 80%;
   font-weight: 400;
+}
+
+/* -- Cory's Styles --*/
+.article-title {
+  color: #444444;
+}
+
+a.article-title:hover {
+  color: #428bca;
+  text-decoration: none;
+}
+
+.article-content {
+  white-space: pre-line;
+}
+
+.article-img {
+  height: 65px;
+  width: 65px;
+  margin-right: 16px;
+}
+
+.article-metadata {
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3;
+}
+
+.article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.article-svg {
+  width: 25px;
+  height: 25px;
+  vertical-align: middle;
+}
+
+.account-img {
+  height: 125px;
+  width: 125px;
+  margin-right: 20px;
+  margin-bottom: 16px;
+}
+
+.account-heading {
+  font-size: 2.5rem;
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
 }
 /*# sourceMappingURL=main.css.map */

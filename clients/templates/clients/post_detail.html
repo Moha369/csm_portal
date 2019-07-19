@@ -21,14 +21,14 @@
             </div>
         </div>
         
-        <h2>{{ object.client_name }}</h2>
-        <p class="article-content">Client ID: <span class="client-info text-uppercase">{{ object.client_ID }}</span></p>
-        <p class="article-content">Password: <span class="client-info">{{ object.client_password }}</span></p>
-        <p class="article-content">Products: <span class="client-info">{{ object.client_products }}</span></p>
-        <p class="article-content">FTP url: <span class="client-info">{{ object.client_FTP }}</span></p>
+        <h2 class="client-name">{{ object.client_name }}</h2>
+        <p class="article-content"><strong>Client ID:</strong> <span class="client-info text-uppercase">{{ object.client_ID }}</span></p>
+        <p class="article-content"><strong>Password:</strong> <span class="client-info">{{ object.client_password }}</span></p>
+        <p class="article-content"><strong>Products:</strong> <span class="client-info">{{ object.client_products }}</span></p>
+        <p class="article-content"><strong>FTP url:</strong> <span class="client-info">{{ object.client_FTP }}</span></p>
         <h4>API Creds:</h4>
-        <p class="article-content">Login: <span class="client-info">{{ object.client_API_login }}</span></p>
-        <p class="article-content">Password: <span class="client-info">{{ object.client_API_password }}</span></p>
+        <p class="article-content"><strong>Login:</strong> <span class="client-info">{{ object.client_API_login }}</span></p>
+        <p class="article-content"><strong>Password:</strong> <span class="client-info">{{ object.client_API_password }}</span></p>
 
         <div class="platform-btns">
             <a class="btn btn-primary btn-sm my-1 text-uppercase" href="https://dashboard.pixalate.com/reports.html?clientId={{ object.client_ID }}&reportId=overview" target="_blank">dashboard</a>

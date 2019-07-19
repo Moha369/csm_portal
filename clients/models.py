@@ -12,7 +12,7 @@ class Post(models.Model):
     client_FTP = models.CharField(max_length=100)
     client_API_login = models.CharField(max_length=100)
     client_API_password = models.CharField(max_length=100)
-    date_posted = models.DateTimeField(default=timezone.now)
+    date_posted = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
