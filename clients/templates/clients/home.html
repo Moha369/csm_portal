@@ -7,7 +7,6 @@
                 <th scope="col" class="text-uppercase">id</th>
                 <th scope="col" class="text-capitalize">name</th>
                 <th scope="col" class="text-capitalize">last updated</th>
-                <th scope="col" class="text-uppercase">csm</th>
             </tr>
         </thead>
         <tbody>
@@ -16,7 +15,6 @@
                 <td class="text-uppercase">{{ post.client_ID }}</td>
                 <td><a href="{% url 'post-detail' post.id %}">{{ post.client_name }}</a></td>
                 <td>{{ post.date_posted|date:'F d, Y' }}</td>
-                <td>{{ post.author }}</td>
             </tr>
             {% endfor %}
         </tbody>

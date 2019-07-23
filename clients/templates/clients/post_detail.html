@@ -7,8 +7,7 @@
         <div class="article-metadata mb-2">
             <div class="row">
                 <div class="col-md-10 d-flex align-items-center">
-                    <small>created by: <a href="#" class="mr-2">{{ object.author }}</a></small>
-                    <small class="text-muted">{{ object.date_posted|date:'F d, Y' }}</small>
+                    <small class="text-muted">Last Modified: {{ object.date_posted|date:'F d, Y' }}</small>
                 </div>
                 <div class="col-md-2 d-flex align-items-center">
                     <div class="edit-btns">
@@ -31,7 +30,7 @@
         <p class="article-content"><strong>Password:</strong> <span class="client-info">{{ object.client_API_password }}</span></p>
 
         <div class="platform-btns">
-            <a class="btn btn-primary btn-sm my-1 text-uppercase" href="https://dashboard.pixalate.com/reports.html?clientId={{ object.client_ID }}&reportId=overview" target="_blank">dashboard</a>
+            <a class="btn btn-primary btn-sm my-1 text-uppercase" href="https://dashboard.pixalate.com/reports.html?clientId={{ object.client_ID }}&reportId=overview">dashboard</a>
             <a class="btn btn-secondary btn-sm my-1 text-uppercase" href="#">mrt</a>
         </div>
         

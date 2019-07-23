@@ -1,5 +1,5 @@
 {% extends 'clients/login_home.html' %}
-
+{% load static %}
 {% load crispy_forms_tags %}
 
 {% block content %}
@@ -11,6 +11,13 @@
     </fieldset>
     <div class="form-group">
         <button class="btn btn-danger btn-block" type="submit">Login</button>
+    </div>
+    <div class="border-top pt-3">
+        <small class="text-muted">
+            <a href="{% url 'social:begin' 'google-oauth2' %}">
+                <img src="{% static 'users/img/signin_with_google.png' %}" alt="Google Login Button">
+            </a>
+        </small>
     </div>
     <div class="border-top pt-3">
         <small class="text-muted">
