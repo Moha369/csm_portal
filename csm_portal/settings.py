@@ -80,7 +80,6 @@ TEMPLATES = [
 ]
 
 
-
 WSGI_APPLICATION = 'csm_portal.wsgi.application'
 
 
@@ -150,5 +149,3 @@ AUTHENTICATION_BACKENDS = (
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '34110951877-ev9c3f0hk9ljvn7gcgih96adlnb1b56t.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'K_pjh4L7-FpBbIX__KkwSqy8'
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
-
-
