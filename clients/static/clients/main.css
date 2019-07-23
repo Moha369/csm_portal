@@ -40,7 +40,6 @@ h5 {
   margin-bottom: 0rem;
 }
 
-p,
 ul,
 ol,
 pre,
@@ -67,7 +66,6 @@ body {
   font-size: 1rem;
   line-height: 1.5rem;
   margin: auto;
-  background: #F4F6F9;
   color: #333333;
   /* -- navigation --*/
   /* -- home page --*/
@@ -84,20 +82,29 @@ body .table {
 }
 
 body .content-section {
-  background: #ffffff;
   padding: 10px 20px;
-  border: 1px solid #dddddd;
   border-radius: 3px;
   margin-bottom: 20px;
 }
 
-body .client-info {
-  font-family: menlo, monospace;
-}
-
-body .client-name {
+body .content-section .client-name {
   font-family: "Roboto", sans-serif;
   font-weight: 900;
+}
+
+body .content-section .client-data {
+  font-size: 0.825rem;
+}
+
+body .content-section .client-info {
+  font-size: 0.875rem;
+  color: #333;
+}
+
+body .content-section .info-title-break {
+  background: #f3f3f3;
+  border-radius: 2px;
+  padding-left: 10px;
 }
 
 /* -- login_home -- */
@@ -188,10 +195,6 @@ body .client-name {
 a.article-title:hover {
   color: #428bca;
   text-decoration: none;
-}
-
-.article-content {
-  white-space: pre-line;
 }
 
 .article-img {

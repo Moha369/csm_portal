@@ -10,5 +10,4 @@ urlpatterns = [
     path('client/<int:pk>/update/', PostUpdateView.as_view(), name="post-update"),
     path('client/<int:pk>/delete/', PostDeleteView.as_view(), name="post-delete"),
     path('about/', views.about, name="clients-about"),
-    path('links/', views.links, name="clients-links"),
 ]

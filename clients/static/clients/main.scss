@@ -47,7 +47,6 @@ h5 {
     margin-bottom: 0rem;
 }
 
-p,
 ul,
 ol,
 pre,
@@ -74,8 +73,6 @@ body {
     font-size: 1rem;
     line-height: 1.5rem;
     margin: auto;
-
-    background: #F4F6F9;
     color: #333333;
 
     /* -- navigation --*/
@@ -91,19 +88,32 @@ body {
 
     /*-- client page --*/
     .content-section {
-        background: #ffffff;
         padding: 10px 20px;
-        border: 1px solid #dddddd;
         border-radius: 3px;
         margin-bottom: 20px;
+
+        .client-name {
+            font-family: $main-font;
+            font-weight: 900;
+        }
+
+        .client-data {
+            font-size: 0.825rem;
+        }
+
+        .client-info {
+            font-size: 0.875rem;
+            color: #333;
+        }
+
+        .info-title-break {
+            background: #f3f3f3;
+            border-radius: 2px;
+            padding-left: 10px;
+        }
     }
-    .client-info {
-        font-family: menlo, monospace;
-    }
-    .client-name {
-        font-family: $main-font;
-        font-weight: 900;
-    }
+    
+    
 }
 
 /* -- login_home -- */
@@ -209,11 +219,6 @@ a.article-title:hover {
     color: #428bca;
     text-decoration: none;
 }
-
-.article-content {
-    white-space: pre-line;
-}
-
 .article-img {
     height: 65px;
     width: 65px;

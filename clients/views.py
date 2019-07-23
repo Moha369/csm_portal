@@ -3,6 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post
+import requests
 
 
 @login_required
@@ -22,13 +23,22 @@ class PostListView(ListView):
 
 class PostDetailView(DetailView):
     model = Post
+    template_name = 'clients/post_detail.html'
 
+    def pokemon_api(request):
+        response = requests.get('https://pokeapi.co/api/v2/pokemon/ditto/')
+        data = response.json()
+        return render(request, 'clients/post_detail.html', {
+            'base': data['base_experience']
+        })
+    
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
     fields = [
         'client_name',
         'client_ID',
+        'client_linkedinurl',
         'client_products',
         'client_password',
         'client_FTP',
@@ -46,6 +56,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     fields = [
         'client_name',
         'client_ID',
+        'client_linkedinurl',
         'client_products',
         'client_password',
         'client_FTP',
@@ -77,7 +88,3 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 
 def about(request):
     return render(request, 'clients/about.html', {'title': 'about!!'})
-
-
-def links(request):
-    return render(request, 'clients/links.html', {'title': 'links!!'})

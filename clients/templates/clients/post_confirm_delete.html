@@ -6,7 +6,8 @@
         {% csrf_token %}
         <fieldset class="form-group">
             <legend class="border-bottom mb-4">Delete Client</legend>
-            <h2>Are you sure you want to delete client {{ object.title }}</h2>
+            <h4 style="font-weight:400">Are you sure you want to delete <strong>{{ object.client_name }}</strong> as an
+                entry?</h4>
         </fieldset>
         <div class="form-group">
             <button class="btn btn-danger" type="submit">Delete</button>

@@ -1,4 +1,5 @@
 {% extends 'clients/base.html' %}
+{% load static %}
 
 {% block content %}
 
@@ -20,19 +21,42 @@
             </div>
         </div>
         
-        <h2 class="client-name">{{ object.client_name }}</h2>
-        <p class="article-content"><strong>Client ID:</strong> <span class="client-info text-uppercase">{{ object.client_ID }}</span></p>
-        <p class="article-content"><strong>Password:</strong> <span class="client-info">{{ object.client_password }}</span></p>
-        <p class="article-content"><strong>Products:</strong> <span class="client-info">{{ object.client_products }}</span></p>
-        <p class="article-content"><strong>FTP url:</strong> <span class="client-info">{{ object.client_FTP }}</span></p>
-        <h4>API Creds:</h4>
-        <p class="article-content"><strong>Login:</strong> <span class="client-info">{{ object.client_API_login }}</span></p>
-        <p class="article-content"><strong>Password:</strong> <span class="client-info">{{ object.client_API_password }}</span></p>
+        <div class="client-header d-flex align-items-center">
+            <h2 class="client-name mr-auto">{{ object.client_name }}</h2>
+            <a href="{{ object.client_linkedinurl }}">
+                <img src="{% static 'clients/img/Linkedin-Logo.png' %}" alt="Linkedin Logo" target="_blank" width="36" height="36">
+            </a>
+        </div>
+
+        <h5>... {{ base }} ...</h5>
+        
+        <p class="client-data text-muted"><span>Client ID:</span> <span class="client-info text-uppercase">{{ object.client_ID }}</span></p>
+        <p class="client-data text-muted"><span>Password:</span> <span class="client-info">{{ object.client_password }}</span></p>
+        <p class="client-data text-muted"><span>Products:</span> <span class="client-info">{{ object.client_products }}</span></p>
+        <p class="client-data text-muted"><span>FTP url:</span> <span class="client-info">{{ object.client_FTP }}</span></p>
 
         <div class="platform-btns">
-            <a class="btn btn-primary btn-sm my-1 text-uppercase" href="https://dashboard.pixalate.com/reports.html?clientId={{ object.client_ID }}&reportId=overview">dashboard</a>
-            <a class="btn btn-secondary btn-sm my-1 text-uppercase" href="#">mrt</a>
+            <a class="btn btn-primary btn-sm my-1 text-uppercase"
+                href="https://dashboard.pixalate.com/reports.html?clientId={{ object.client_ID }}&reportId=overview"
+                targert="_blank">dashboard</a>
+            <a class="btn btn-secondary btn-sm my-1 text-uppercase" href="#" targert="_blank">mrt</a>
         </div>
+
+        <h5 class="info-title-break mb-2 py-1">Reporting API Credentials:</h5>
+        <p class="client-data text-muted"><span>Login:</span> <span class="client-info">{{ object.client_API_login }}</span></p>
+        <p class="client-data text-muted"><span>Password:</span> <span class="client-info">{{ object.client_API_password }}</span></p>
+
+        <h5 class="info-title-break mb-2 py-1">Salesforce:</h5>
+
+        <p>Salesforce infomation goes here:</p>
+
+        <h5 class="info-title-break mb-2 py-1">Pendo:</h5>
+
+        <p>Pendo infomation goes here:</p>
+
+        <h5 class="info-title-break mb-2 py-1">Jira Tickets:</h5>
+
+        <p>Jira infomation goes here:</p>
         
     </div>
 </article>

@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'social_django'  # social auth
+    'social_django',  # social auth
+    'algoliasearch_django'  # algolia search
 ]
 
 MIDDLEWARE = [
@@ -139,6 +140,7 @@ MEDIA_URL = '/media/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+# Social Auth setup
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.google.GoogleOpenId',  # for Google authentication
     'social_core.backends.google.GoogleOAuth2',  # for Google authentication
@@ -149,3 +151,10 @@ AUTHENTICATION_BACKENDS = (
 SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '34110951877-ev9c3f0hk9ljvn7gcgih96adlnb1b56t.apps.googleusercontent.com'
 SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = 'K_pjh4L7-FpBbIX__KkwSqy8'
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
+
+
+# Algolia Search Functionality
+ALGOLIA = {
+    'APPLICATION_ID': 'JTRUI65AWP',
+    'API_KEY': 'c460b05db22eae670eaca4906be35f48'
+}
