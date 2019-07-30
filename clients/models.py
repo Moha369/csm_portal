@@ -7,9 +7,11 @@ from django.urls import reverse
 class Post(models.Model):
     client_name = models.CharField(max_length=100)
     client_ID = models.CharField(max_length=100)
-    client_linkedinurl = models.CharField(max_length=150, default="www.")
+    client_linkedinurl = models.CharField(
+        max_length=150, default="Linkedin Profile...")
     client_password = models.CharField(max_length=100, default="***")
     client_products = models.CharField(max_length=100, default="")
+    client_notes = models.TextField(default="Notes Here...")
     client_FTP = models.CharField(max_length=100, default="ftp://")
     client_API_login = models.CharField(max_length=100)
     client_API_password = models.CharField(max_length=100)

@@ -3,7 +3,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post
+from jira.client import JIRA
 import requests
+import json
 
 
 @login_required
@@ -22,16 +24,41 @@ class PostListView(ListView):
 
 
 class PostDetailView(DetailView):
+    '''
+        This view will hold infomation from Pendo / Salesforce and Jira
+        using their APIs to display the infomation.
+    '''
     model = Post
     template_name = 'clients/post_detail.html'
 
-    def pokemon_api(request):
-        response = requests.get('https://pokeapi.co/api/v2/pokemon/ditto/')
+    # Test API ---
+
+    def coindesk(self):
+        response = requests.get(
+            'https://api.coindesk.com/v1/bpi/currentprice.json')
         data = response.json()
-        return render(request, 'clients/post_detail.html', {
-            'base': data['base_experience']
-        })
-    
+        return data['disclaimer']
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(PostDetailView, self).get_context_data(*args, **kwargs)
+        context['base'] = self.coindesk()
+        return context
+
+    #  Salesforce API ---
+    #  Pendo API ---
+    #  Jira Cloud API ---
+    def jira_tickets(self):
+        jira = JIRA(options={'server': 'https://pixalate.atlassian.net'},
+                    basic_auth=('paulb@pixalate.com', 'iqKaAYoiFfbY8P3uVrA6AEBB'))
+        issue = jira.issue('CS-2917')
+        return issue
+
+    def get_jira_context(self, *args, **kwargs):
+        context = super(PostDetailView, self).get_jira_context(
+            **args, **kwargs)
+        context['jira_data'] = self.jira_tickets()
+        return context
+
 
 class PostCreateView(LoginRequiredMixin, CreateView):
     model = Post
@@ -40,6 +67,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
         'client_ID',
         'client_linkedinurl',
         'client_products',
+        'client_notes',
         'client_password',
         'client_FTP',
         'client_API_login',
@@ -58,6 +86,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         'client_ID',
         'client_linkedinurl',
         'client_products',
+        'client_notes',
         'client_password',
         'client_FTP',
         'client_API_login',

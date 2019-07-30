@@ -20,20 +20,23 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="client-header d-flex align-items-center">
             <h2 class="client-name mr-auto">{{ object.client_name }}</h2>
             <a href="{{ object.client_linkedinurl }}">
-                <img src="{% static 'clients/img/Linkedin-Logo.png' %}" alt="Linkedin Logo" target="_blank" width="36" height="36">
+                <img src="{% static 'clients/img/Linkedin-Logo.png' %}" alt="Linkedin Logo" target="_blank" width="36"
+                    height="36">
             </a>
         </div>
 
-        <h5>... {{ base }} ...</h5>
-        
-        <p class="client-data text-muted"><span>Client ID:</span> <span class="client-info text-uppercase">{{ object.client_ID }}</span></p>
-        <p class="client-data text-muted"><span>Password:</span> <span class="client-info">{{ object.client_password }}</span></p>
-        <p class="client-data text-muted"><span>Products:</span> <span class="client-info">{{ object.client_products }}</span></p>
-        <p class="client-data text-muted"><span>FTP url:</span> <span class="client-info">{{ object.client_FTP }}</span></p>
+        <p class="client-data text-muted">Client ID: <span
+                class="client-info text-uppercase">{{ object.client_ID }}</span></p>
+        <p class="client-data text-muted">Password: <span class="client-info">{{ object.client_password }}</span></p>
+        <p class="client-data text-muted">Products: <span class="client-info">{{ object.client_products }}</span></p>
+        <p class="client-data text-muted">FTP url: <span class="client-info">{{ object.client_FTP }}</span></p>
+        <p class="client-data text-muted">Latest Client Notes: <br>
+            <span class="client-info">{{ object.client_notes }}</span>
+        </p>
 
         <div class="platform-btns">
             <a class="btn btn-primary btn-sm my-1 text-uppercase"
@@ -43,8 +46,21 @@
         </div>
 
         <h5 class="info-title-break mb-2 py-1">Reporting API Credentials:</h5>
-        <p class="client-data text-muted"><span>Login:</span> <span class="client-info">{{ object.client_API_login }}</span></p>
-        <p class="client-data text-muted"><span>Password:</span> <span class="client-info">{{ object.client_API_password }}</span></p>
+        <div class="row">
+            <div class="col-md-10">
+                <p class="client-data text-muted">Login: <span class="client-info">{{ object.client_API_login }}
+                        </Login:>
+                </p>
+                <p class="client-data text-muted">Password: <span
+                        class="client-info">{{ object.client_API_password }}</span></p>
+            </div>
+            <div class="col-md-2">
+                <p class="client-data text-muted">
+                    API Usage <span class="client-info">00</span> calls today.
+                </p>
+            </div>
+        </div>
+
 
         <h5 class="info-title-break mb-2 py-1">Salesforce:</h5>
 
@@ -56,8 +72,12 @@
 
         <h5 class="info-title-break mb-2 py-1">Jira Tickets:</h5>
 
-        <p>Jira infomation goes here:</p>
-        
+        <p>{{ jira_data }}</p>
+
+        <h5 class="info-title-break mb-2 py-1">Test API:</h5>
+
+        <p>{{ base }}</p>
+
     </div>
 </article>
 

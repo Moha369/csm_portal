@@ -1,25 +1,6 @@
 {% extends 'clients/base.html' %}
 
 {% block content %}
-<!-- instantsearch.js -->
-<script>
-    const search = instantsearch({
-        indexName: 'dev_PIXALATECLIENTS',
-        searchClient: algoliasearch(
-            'JTRUI65AWP',
-            '62743a87ded39f0460ef058dfbbe78cf'
-        ),
-    });
-
-    instantsearch.widgets.searchBox({
-        container: document.querySelector('#searchBox'),
-        searchAsYouType: true,
-    });
-
-    search.start();
-</script>
-
-<div id="searchBox"></div>
 <input class="form-control mb-4" type="text" placeholder="placeholder for search">
 
 <table class="table table-striped">
