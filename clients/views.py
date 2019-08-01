@@ -65,13 +65,14 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     fields = [
         'client_name',
         'client_ID',
-        'client_linkedinurl',
+        'client_password',
         'client_products',
         'client_notes',
-        'client_password',
         'client_FTP',
         'client_API_login',
         'client_API_password',
+        'client_linkedinurl',
+        'client_salesforceurl',
     ]
 
     def form_valid(self, form):
@@ -84,13 +85,14 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     fields = [
         'client_name',
         'client_ID',
-        'client_linkedinurl',
+        'client_password',
         'client_products',
         'client_notes',
-        'client_password',
         'client_FTP',
         'client_API_login',
         'client_API_password',
+        'client_linkedinurl',
+        'client_salesforceurl',
     ]
 
     def form_valid(self, form):

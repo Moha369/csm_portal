@@ -1,4 +1,5 @@
 {% extends 'clients/base.html' %}
+{% load static %}
 
 {% block content %}
 <input class="form-control mb-4" type="text" placeholder="placeholder for search">
@@ -8,6 +9,7 @@
         <tr>
             <th scope="col" class="text-uppercase">id</th>
             <th scope="col" class="text-capitalize">name</th>
+            <th scope="col" class="text-capitalize">links</th>
             <th scope="col" class="text-capitalize">last updated</th>
         </tr>
     </thead>
@@ -16,10 +18,19 @@
         <tr>
             <td class="text-uppercase">{{ post.client_ID }}</td>
             <td><a href="{% url 'post-detail' post.id %}">{{ post.client_name }}</a></td>
+            <td>
+                <a href="{{ post.client_linkedinurl }}" class="mr-3">
+                    <img src="{% static 'clients/img/linkedin-icon.svg' %}" alt="Linkedin Logo" target="_blank"
+                        width="32">
+                </a>
+                <a href="{{ post.client_salesforceurl }}">
+                    <img src="{% static 'clients/img/salesforce_1.svg' %}" alt="Linkedin Logo" target="_blank"
+                        width="40">
+                </a>
+            </td>
             <td>{{ post.date_posted|date:'F d, Y' }}</td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
 {% endblock content %}
-

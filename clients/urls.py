@@ -3,6 +3,7 @@ from django.conf.urls import url, include
 from .views import PostListView, PostDetailView, PostCreateView, PostUpdateView, PostDeleteView
 from . import views
 
+
 urlpatterns = [
     path('', PostListView.as_view(), name="clients-home"),
     path('client/<int:pk>/', PostDetailView.as_view(), name="post-detail"),

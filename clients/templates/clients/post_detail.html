@@ -7,60 +7,72 @@
     <div class="media-body">
         <div class="article-metadata mb-2">
             <div class="row">
-                <div class="col-md-10 d-flex align-items-center">
+                <div class="col-md-9 d-flex align-items-center">
                     <small class="text-muted">Last Modified: {{ object.date_posted|date:'F d, Y' }}</small>
                 </div>
-                <div class="col-md-2 d-flex align-items-center">
+                <!-- <div class="col-md-3 d-flex align-items-center justify-content-end">
                     <div class="edit-btns">
                         {% if object.author == user %}
-                        <a class="btn btn-secondary btn-sm my-1" href="{% url 'post-update' object.id %}">Update</a>
-                        <a class="btn btn-danger btn-sm my-1" href="{% url 'post-delete' object.id %}">Delete</a>
+                        <a class="btn btn-secondary  my-1 text-capitalize"
+                            href="{% url 'post-update' object.id %}">update client</a>
+                        <a class="btn btn-danger  my-1 text-capitalize" href="{% url 'post-delete' object.id %}">delete
+                            client</a>
                         {% endif %}
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
 
-        <div class="client-header d-flex align-items-center">
-            <h2 class="client-name mr-auto">{{ object.client_name }}</h2>
-            <a href="{{ object.client_linkedinurl }}">
-                <img src="{% static 'clients/img/Linkedin-Logo.png' %}" alt="Linkedin Logo" target="_blank" width="36"
-                    height="36">
+        <div class="client-header d-flex align-items-center border-bottom mb-5 pb-2">
+            <h2 class="client-name mr-auto" style="margin-bottom: 0;">{{ object.client_name }}</h2>
+            <a href="{{ object.client_linkedinurl }}" class="mr-3">
+                <img src="{% static 'clients/img/linkedin-icon.svg' %}" alt="Linkedin Logo" target="_blank" width="45">
+            </a>
+            <a href="{{ object.client_salesforceurl }}">
+                <img src="{% static 'clients/img/salesforce.svg' %}" alt="Linkedin Logo" target="_blank" width="64">
             </a>
         </div>
 
-        <p class="client-data text-muted">Client ID: <span
-                class="client-info text-uppercase">{{ object.client_ID }}</span></p>
-        <p class="client-data text-muted">Password: <span class="client-info">{{ object.client_password }}</span></p>
-        <p class="client-data text-muted">Products: <span class="client-info">{{ object.client_products }}</span></p>
-        <p class="client-data text-muted">FTP url: <span class="client-info">{{ object.client_FTP }}</span></p>
-        <p class="client-data text-muted">Latest Client Notes: <br>
-            <span class="client-info">{{ object.client_notes }}</span>
-        </p>
+        <div class="row">
+            <div class="col">
+                <p class="client-data text-muted border-bottom">Client ID: <span
+                        class="client-info text-uppercase">{{ object.client_ID }}</span></p>
+                <p class="client-data text-muted border-bottom">Password: <span
+                        class="client-info">{{ object.client_password }}</span></p>
+                <p class="client-data text-muted border-bottom">Products: <span
+                        class="client-info">{{ object.client_products }}</span></p>
+                <p class="client-data text-muted border-bottom">FTP: <span
+                        class="client-info">{{ object.client_FTP }}</span></p>
+            </div>
+            <div class="col">
+                <div class="col-md-10">
+                    <p class="client-data text-muted border-bottom">API Login: <span
+                            class="client-info">{{ object.client_API_login }}
+                            </Login:>
+                    </p>
+                    <p class="client-data text-muted border-bottom">API Password: <span
+                            class="client-info">{{ object.client_API_password }}</span></p>
+                    <p class="client-data text-muted">
+                        API Usage <span class="client-info">00</span> calls today.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <p class="client-data text-muted border-bottom">Latest Client Notes: <br>
+                    <span class="client-info">{{ object.client_notes }}</span>
+                </p>
+            </div>
+        </div>
+
 
         <div class="platform-btns">
-            <a class="btn btn-primary btn-sm my-1 text-uppercase"
+            <a class="btn btn-primary my-1 mr-2 text-uppercase"
                 href="https://dashboard.pixalate.com/reports.html?clientId={{ object.client_ID }}&reportId=overview"
                 targert="_blank">dashboard</a>
-            <a class="btn btn-secondary btn-sm my-1 text-uppercase" href="#" targert="_blank">mrt</a>
+            <a class="btn btn-secondary my-1 text-uppercase" href="#" targert="_blank">mrt</a>
         </div>
-
-        <h5 class="info-title-break mb-2 py-1">Reporting API Credentials:</h5>
-        <div class="row">
-            <div class="col-md-10">
-                <p class="client-data text-muted">Login: <span class="client-info">{{ object.client_API_login }}
-                        </Login:>
-                </p>
-                <p class="client-data text-muted">Password: <span
-                        class="client-info">{{ object.client_API_password }}</span></p>
-            </div>
-            <div class="col-md-2">
-                <p class="client-data text-muted">
-                    API Usage <span class="client-info">00</span> calls today.
-                </p>
-            </div>
-        </div>
-
 
         <h5 class="info-title-break mb-2 py-1">Salesforce:</h5>
 
@@ -77,6 +89,17 @@
         <h5 class="info-title-break mb-2 py-1">Test API:</h5>
 
         <p>{{ base }}</p>
+
+        <div class="border-top">
+            <div class="edit-btns pt-2">
+                <a class="btn btn-secondary  my-1 text-capitalize" href="{% url 'post-update' object.id %}">update
+                    client</a>
+                {% if object.author == user %}
+                <a class="btn btn-danger  my-1 text-capitalize" href="{% url 'post-delete' object.id %}">delete
+                    client</a>
+                {% endif %}
+            </div>
+        </div>
 
     </div>
 </article>

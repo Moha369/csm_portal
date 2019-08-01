@@ -14,13 +14,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.3.1/themes/reset-min.css"
         integrity="sha256-t2ATOGCtAIZNnzER679jwcFcKYfLlw01gli6F6oszk8=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.3.1/themes/algolia-min.css"
-            integrity="sha256-HB49n/BZjuqiCtQQf49OdZn63XuKFaxcIHWf0HNKte8=" crossorigin="anonymous">
+        integrity="sha256-HB49n/BZjuqiCtQQf49OdZn63XuKFaxcIHWf0HNKte8=" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="{% static 'clients/main.css' %}">
 
     {% if title %}
-        <title>CSM Portal - {{title}}</title>
+    <title>CSM Portal - {{title}}</title>
     {% else %}
-        <title>CSM Portal</title>
+    <title>CSM Portal</title>
     {% endif %}
 </head>
 
@@ -36,18 +36,17 @@
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <div class="navbar-nav mr-auto">
-                    <a class="nav-item nav-link active" href="{% url 'clients-home' %}">Clients</a>
-                    <a class="nav-item nav-link" href="{% url 'clients-about' %}">About</a>
-                    <a class="nav-item nav-link" href="https://developer.pixalate.com/?version=latest">API</a>
+                    <a class="nav-item nav-link text-capitalize active" href="{% url 'clients-home' %}">clients</a>
                 </div>
                 <form class="form-inline my-2 my-lg-0">
                     {% if user.is_authenticated %}
-                        <a class="btn btn-sm btn-primary mr-2" href="{% url 'post-create' %}">New Entry</a>
-                        <a class="btn btn-sm btn-outline-light" href="{% url 'logout' %}">Logout</a>
+                    <a class="btn  btn-primary mr-2 text-capitalize" href="{% url 'post-create' %}">create new
+                        client</a>
+                    <a class="btn  btn-outline-light text-capitalize" href="{% url 'logout' %}">logout</a>
                     {% else %}
-                        <a class="btn btn-sm btn-primary" href="{% url 'login' %}">Login</a>
+                    <a class="btn  btn-primary" href="{% url 'login' %}">Login</a>
                     {% endif %}
-                    
+
                 </form>
             </div>
         </div>
@@ -59,11 +58,11 @@
         <div class="row">
             <div class="col">
                 {% if messages %}
-                    {% for message in messages %}
-                        <div class="alert alert-{{ message.tags }}">
-                            {{ message }}
-                        </div>
-                    {% endfor %}
+                {% for message in messages %}
+                <div class="alert alert-{{ message.tags }}">
+                    {{ message }}
+                </div>
+                {% endfor %}
                 {% endif %}
                 {% block content %}{% endblock %}
             </div>

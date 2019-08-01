@@ -59,6 +59,12 @@ ol ul {
 
 .btn {
   font-size: 0.825rem;
+  letter-spacing: 1px;
+}
+
+.table td,
+.table th {
+  vertical-align: middle !important;
 }
 
 body {
