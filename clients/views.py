@@ -3,9 +3,9 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post
-from jira.client import JIRA
 import requests
 import json
+import dateutil.parser
 
 
 @login_required
@@ -45,13 +45,31 @@ class PostDetailView(DetailView):
         return context
 
     #  Salesforce API ---
-    #  Pendo API ---
+
     #  Jira Cloud API ---
     def jira_tickets(self):
-        jira = JIRA(options={'server': 'https://pixalate.atlassian.net'},
-                    basic_auth=('paulb@pixalate.com', 'iqKaAYoiFfbY8P3uVrA6AEBB'))
-        issue = jira.issue('CS-2917')
-        return issue
+        url = 'https://pixalate.atlassian.net/rest/api/2/search?jql=project=CS'
+
+        r = requests.get(url, auth=('paulb@pixalate.com',
+                                    'iqKaAYoiFfbY8P3uVrA6AEBB'))
+
+        data = r.json()
+        client_ID = ['client_ID']
+
+        for ticket in data['issues']:
+            ticket_number = ticket['key']
+            summary = ticket['fields']['summary']
+            assignee = ticket['fields']['assignee']['name']
+            status = ticket['fields']['status']['name']
+            updated = dateutil.parser.parse(ticket['fields']['updated'])
+            ticket_url = 'https://pixalate.atlassian.net/browse/' + \
+                ticket['key']
+
+            client = ticket['fields']['customfield_10907'][0]['value']
+
+            if ticket['fields']['status']['name'] != 'Closed' and client_ID.upper() in client:
+                return ticket_number, summary, assignee, status,
+                updated.strftime('%m/%d/%Y'), ticket_url, client
 
     def get_jira_context(self, *args, **kwargs):
         context = super(PostDetailView, self).get_jira_context(
@@ -73,6 +91,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
         'client_API_password',
         'client_linkedinurl',
         'client_salesforceurl',
+        'client_qaresults'
     ]
 
     def form_valid(self, form):
@@ -93,6 +112,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         'client_API_password',
         'client_linkedinurl',
         'client_salesforceurl',
+        'client_qaresults'
     ]
 
     def form_valid(self, form):

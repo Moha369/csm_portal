@@ -15,12 +15,13 @@
     <div class="border-top py-3">
         <small class="text-muted">
             <a href="{% url 'social:begin' 'google-oauth2' %}">
-                <img src="{% static 'users/img/btn_google_signin_dark.png' %}" alt="Google Login Button" class="mr-auto ml-auto" style="display:block;">
-            </a>
-            <a href="https://www.strava.com/oauth/authorize">
-                <img src="{% static 'users/img/btn_strava_connectwith_orange.png' %}" alt="Connect With Strava"
+                <img src="{% static 'users/img/btn_google_signin_dark.png' %}" alt="Google Login Button"
                     class="mr-auto ml-auto" style="display:block;">
             </a>
+            <!-- <a href="https://www.strava.com/oauth/authorize">
+                <img src="{% static 'users/img/btn_strava_connectwith_orange.png' %}" alt="Connect With Strava"
+                    class="mr-auto ml-auto" style="display:block;">
+            </a> -->
         </small>
     </div>
     <div class="border-top pt-3">
@@ -31,5 +32,3 @@
 </form>
 
 {% endblock content %}
-
-

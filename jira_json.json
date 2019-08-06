@@ -1,0 +1,335 @@
+{
+    "expand": "schema,names",
+    "startAt": 0,
+    "maxResults": 50,
+    "total": 2532,
+    "issues": [
+        {
+            "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+            "id": "20566",
+            "self": "https://pixalate.atlassian.net/rest/api/2/issue/20566",
+            "key": "CS-3178",
+            "fields": {
+                "statuscategorychangedate": "2019-08-05T16:04:59.862-0700",
+                "issuetype": {
+                    "self": "https://pixalate.atlassian.net/rest/api/2/issuetype/10303",
+                    "id": "10303",
+                    "description": "QA and Tag Generation type requests",
+                    "iconUrl": "https://pixalate.atlassian.net/secure/viewavatar?size=medium&avatarId=10701&avatarType=issuetype",
+                    "name": "Ad Ops",
+                    "subtask": false,
+                    "avatarId": 10701
+                },
+                "timespent": 1200,
+                "project": {
+                    "self": "https://pixalate.atlassian.net/rest/api/2/project/10401",
+                    "id": "10401",
+                    "key": "CS",
+                    "name": "Customer Success",
+                    "projectTypeKey": "service_desk",
+                    "simplified": false,
+                    "avatarUrls": {
+                        "48x48": "https://pixalate.atlassian.net/secure/projectavatar?pid=10401&avatarId=10011",
+                        "24x24": "https://pixalate.atlassian.net/secure/projectavatar?size=small&s=small&pid=10401&avatarId=10011",
+                        "16x16": "https://pixalate.atlassian.net/secure/projectavatar?size=xsmall&s=xsmall&pid=10401&avatarId=10011",
+                        "32x32": "https://pixalate.atlassian.net/secure/projectavatar?size=medium&s=medium&pid=10401&avatarId=10011"
+                    },
+                    "projectCategory": {
+                        "self": "https://pixalate.atlassian.net/rest/api/2/projectCategory/10003",
+                        "id": "10003",
+                        "description": "Pixalate Teams",
+                        "name": "Team"
+                    }
+                },
+                "customfield_11000": {
+                    "self": "https://pixalate.atlassian.net/rest/api/2/customFieldOption/10808",
+                    "value": "Automatic Selection",
+                    "id": "10808"
+                },
+                "fixVersions": [],
+                "customfield_11002": [
+                    {
+                        "self": "https://pixalate.atlassian.net/rest/api/2/customFieldOption/10809",
+                        "value": "Automatic Selection",
+                        "id": "10809"
+                    }
+                ],
+                "aggregatetimespent": 1200,
+                "customfield_11201": [
+                    {
+                        "self": "https://pixalate.atlassian.net/rest/api/2/customFieldOption/10810",
+                        "value": "Automatic Selection",
+                        "id": "10810"
+                    }
+                ],
+                "resolution": {
+                    "self": "https://pixalate.atlassian.net/rest/api/2/resolution/1",
+                    "id": "1",
+                    "description": "A fix for this issue is checked into the tree and tested.",
+                    "name": "Fixed"
+                },
+                "customfield_11003": [
+                    {
+                        "self": "https://pixalate.atlassian.net/rest/api/2/customFieldOption/10801",
+                        "value": "Automatic Selection",
+                        "id": "10801"
+                    }
+                ],
+                "customfield_11004": {
+                    "self": "https://pixalate.atlassian.net/rest/api/2/customFieldOption/10904",
+                    "value": "Automatic Selection",
+                    "id": "10904"
+                },
+                "customfield_11401": null,
+                "customfield_11400": null,
+                "customfield_10500": null,
+                "customfield_10501": {
+                    "hasEpicLinkFieldDependency": false,
+                    "showField": false,
+                    "nonEditableReason": {
+                        "reason": "EPIC_LINK_SHOULD_BE_USED",
+                        "message": "To set an epic as the parent, use the epic link instead"
+                    }
+                },
+                "customfield_10502": "{}",
+                "customfield_10700": null,
+                "customfield_10701": null,
+                "customfield_10702": null,
+                "customfield_10703": null,
+                "resolutiondate": "2019-08-05T16:04:59.844-0700",
+                "customfield_10704": null,
+                "customfield_10705": null,
+                "customfield_10706": null,
+                "customfield_10707": null,
+                "workratio": -1,
+                "customfield_10906": null,
+                "customfield_10708": null,
+                "customfield_10907": [
+                    {
+                        "self": "https://pixalate.atlassian.net/rest/api/2/customFieldOption/11707",
+                        "value": " Internal",
+                        "id": "11707"
+                    }
+                ],
+                "customfield_10709": null,
+                "lastViewed": "2019-08-06T04:21:23.606-0700",
+                "watches": {
+                    "self": "https://pixalate.atlassian.net/rest/api/2/issue/CS-3178/watchers",
+                    "watchCount": 4,
+                    "isWatching": false
+                },
+                "created": "2019-08-05T15:45:27.944-0700",
+                "priority": {
+                    "self": "https://pixalate.atlassian.net/rest/api/2/priority/2",
+                    "iconUrl": "https://pixalate.atlassian.net/images/icons/priorities/high.svg",
+                    "name": "High",
+                    "id": "2"
+                },
+                "customfield_10023": null,
+                "customfield_10100": {
+                    "id": "6",
+                    "name": "Time to resolution",
+                    "_links": {
+                        "self": "https://pixalate.atlassian.net/rest/servicedeskapi/request/20566/sla/6"
+                    },
+                    "completedCycles": [
+                        {
+                            "startTime": {
+                                "iso8601": "2019-08-05T15:45:28-0700",
+                                "jira": "2019-08-05T15:45:28.166-0700",
+                                "friendly": "Yesterday 3:45 PM",
+                                "epochMillis": 1565045128166
+                            },
+                            "stopTime": {
+                                "iso8601": "2019-08-05T16:04:59-0700",
+                                "jira": "2019-08-05T16:04:59.906-0700",
+                                "friendly": "Yesterday 4:04 PM",
+                                "epochMillis": 1565046299906
+                            },
+                            "breached": false,
+                            "goalDuration": {
+                                "millis": 432000000,
+                                "friendly": "120h"
+                            },
+                            "elapsedTime": {
+                                "millis": 1171740,
+                                "friendly": "19m"
+                            },
+                            "remainingTime": {
+                                "millis": 430828260,
+                                "friendly": "119h 40m"
+                            }
+                        }
+                    ]
+                },
+                "customfield_10024": [],
+                "customfield_10300": null,
+                "customfield_10301": null,
+                "labels": [
+                    "Triage"
+                ],
+                "aggregatetimeoriginalestimate": null,
+                "timeestimate": 0,
+                "versions": [],
+                "issuelinks": [],
+                "assignee": {
+                    "self": "https://pixalate.atlassian.net/rest/api/2/user?accountId=557058%3A0428db16-2cbe-4eb7-9c64-56ae1bc826ce",
+                    "name": "smazhar",
+                    "key": "smazhar",
+                    "accountId": "557058:0428db16-2cbe-4eb7-9c64-56ae1bc826ce",
+                    "avatarUrls": {
+                        "48x48": "https://secure.gravatar.com/avatar/70599447663184fc6d00acd5a58b5007?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FSM-2.png&size=48&s=48",
+                        "24x24": "https://secure.gravatar.com/avatar/70599447663184fc6d00acd5a58b5007?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FSM-2.png&size=24&s=24",
+                        "16x16": "https://secure.gravatar.com/avatar/70599447663184fc6d00acd5a58b5007?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FSM-2.png&size=16&s=16",
+                        "32x32": "https://secure.gravatar.com/avatar/70599447663184fc6d00acd5a58b5007?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FSM-2.png&size=32&s=32"
+                    },
+                    "displayName": "Sunny Mazhar",
+                    "active": true,
+                    "timeZone": "America/Los_Angeles",
+                    "accountType": "atlassian"
+                },
+                "updated": "2019-08-05T16:04:59.856-0700",
+                "status": {
+                    "self": "https://pixalate.atlassian.net/rest/api/2/status/5",
+                    "description": "A resolution has been taken, and it is awaiting verification by reporter. From here issues are either reopened, or are closed.",
+                    "iconUrl": "https://pixalate.atlassian.net/images/icons/statuses/resolved.png",
+                    "name": "Resolved",
+                    "id": "5",
+                    "statusCategory": {
+                        "self": "https://pixalate.atlassian.net/rest/api/2/statuscategory/3",
+                        "id": 3,
+                        "key": "done",
+                        "colorName": "green",
+                        "name": "Done"
+                    }
+                },
+                "components": [],
+                "timeoriginalestimate": null,
+                "description": "Hi Team, \r\n\r\nPlease generate post bid tags for Symantec. I've attached their macro mapping sheet. \r\n\r\nThis is high priority as they are looking to share this with Samsung and Roku to request for 3rd party certification.  \r\n\r\nHoping to get this by EOD today or first thing tomorrow morning. \r\n\r\nThanks!\r\nLyn \r\n\r\n [^Symantec_OTT_CTV Campaign_Macro Mapping MAY 2019_Pixalate.xlsx] \r\n\r\n",
+                "customfield_10011": "0|i00vi7:",
+                "customfield_10600": [],
+                "customfield_10006": null,
+                "security": null,
+                "customfield_10007": null,
+                "customfield_10800": {
+                    "id": "7",
+                    "name": "Time to first response",
+                    "_links": {
+                        "self": "https://pixalate.atlassian.net/rest/servicedeskapi/request/20566/sla/7"
+                    },
+                    "completedCycles": [
+                        {
+                            "startTime": {
+                                "iso8601": "2019-08-05T15:45:28-0700",
+                                "jira": "2019-08-05T15:45:28.166-0700",
+                                "friendly": "Yesterday 3:45 PM",
+                                "epochMillis": 1565045128166
+                            },
+                            "stopTime": {
+                                "iso8601": "2019-08-05T16:04:59-0700",
+                                "jira": "2019-08-05T16:04:59.906-0700",
+                                "friendly": "Yesterday 4:04 PM",
+                                "epochMillis": 1565046299906
+                            },
+                            "breached": false,
+                            "goalDuration": {
+                                "millis": 28800000,
+                                "friendly": "8h"
+                            },
+                            "elapsedTime": {
+                                "millis": 1171740,
+                                "friendly": "19m"
+                            },
+                            "remainingTime": {
+                                "millis": 27628260,
+                                "friendly": "7h 40m"
+                            }
+                        }
+                    ]
+                },
+                "aggregatetimeestimate": 0,
+                "customfield_10801": null,
+                "customfield_10802": null,
+                "summary": "Generate Tags for Symantec (Initiative LA) ",
+                "creator": {
+                    "self": "https://pixalate.atlassian.net/rest/api/2/user?accountId=5bb25b2459e46d7be31a9d09",
+                    "name": "lyn",
+                    "key": "lyn",
+                    "accountId": "5bb25b2459e46d7be31a9d09",
+                    "avatarUrls": {
+                        "48x48": "https://secure.gravatar.com/avatar/3532e2e5aa259fa2aa7d1725f2f647de?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FLV-4.png&size=48&s=48",
+                        "24x24": "https://secure.gravatar.com/avatar/3532e2e5aa259fa2aa7d1725f2f647de?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FLV-4.png&size=24&s=24",
+                        "16x16": "https://secure.gravatar.com/avatar/3532e2e5aa259fa2aa7d1725f2f647de?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FLV-4.png&size=16&s=16",
+                        "32x32": "https://secure.gravatar.com/avatar/3532e2e5aa259fa2aa7d1725f2f647de?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FLV-4.png&size=32&s=32"
+                    },
+                    "displayName": "Lyn Vito",
+                    "active": true,
+                    "timeZone": "America/New_York",
+                    "accountType": "atlassian"
+                },
+                "subtasks": [],
+                "reporter": {
+                    "self": "https://pixalate.atlassian.net/rest/api/2/user?accountId=5bb25b2459e46d7be31a9d09",
+                    "name": "lyn",
+                    "key": "lyn",
+                    "accountId": "5bb25b2459e46d7be31a9d09",
+                    "avatarUrls": {
+                        "48x48": "https://secure.gravatar.com/avatar/3532e2e5aa259fa2aa7d1725f2f647de?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FLV-4.png&size=48&s=48",
+                        "24x24": "https://secure.gravatar.com/avatar/3532e2e5aa259fa2aa7d1725f2f647de?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FLV-4.png&size=24&s=24",
+                        "16x16": "https://secure.gravatar.com/avatar/3532e2e5aa259fa2aa7d1725f2f647de?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FLV-4.png&size=16&s=16",
+                        "32x32": "https://secure.gravatar.com/avatar/3532e2e5aa259fa2aa7d1725f2f647de?d=https%3A%2F%2Favatar-management--avatars.us-west-2.prod.public.atl-paas.net%2Finitials%2FLV-4.png&size=32&s=32"
+                    },
+                    "displayName": "Lyn Vito",
+                    "active": true,
+                    "timeZone": "America/New_York",
+                    "accountType": "atlassian"
+                },
+                "customfield_10000": "2019-08-05T16:04:02.041-0700",
+                "aggregateprogress": {
+                    "progress": 1200,
+                    "total": 1200,
+                    "percent": 100
+                },
+                "customfield_10001": "1_*:*_1_*:*_960519_*|*_3_*:*_1_*:*_211427_*|*_5_*:*_1_*:*_0",
+                "customfield_10002": [
+                    {
+                        "self": "https://pixalate.atlassian.net/rest/api/2/customFieldOption/10000",
+                        "value": "Impediment",
+                        "id": "10000"
+                    }
+                ],
+                "customfield_10003": null,
+                "customfield_10400": null,
+                "customfield_11403": null,
+                "customfield_11402": "English",
+                "customfield_10710": null,
+                "environment": null,
+                "customfield_10711": null,
+                "customfield_11405": null,
+                "customfield_10712": null,
+                "customfield_11404": null,
+                "customfield_10713": null,
+                "customfield_10714": null,
+                "customfield_11409": null,
+                "customfield_10715": null,
+                "duedate": null,
+                "customfield_10716": null,
+                "customfield_11408": {
+                    "self": "https://pixalate.atlassian.net/rest/api/2/customFieldOption/11765",
+                    "value": "Set-up and QA",
+                    "id": "11765"
+                },
+                "progress": {
+                    "progress": 1200,
+                    "total": 1200,
+                    "percent": 100
+                },
+                "votes": {
+                    "self": "https://pixalate.atlassian.net/rest/api/2/issue/CS-3178/votes",
+                    "votes": 0,
+                    "hasVoted": false
+                }
+            }
+        }
+    ]
+}

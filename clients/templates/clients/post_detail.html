@@ -68,19 +68,19 @@
 
 
         <div class="platform-btns">
-            <a class="btn btn-primary my-1 mr-2 text-uppercase"
+            <a class="btn btn-primary my-1 mr-2 text-capitalize"
                 href="https://dashboard.pixalate.com/reports.html?clientId={{ object.client_ID }}&reportId=overview"
-                targert="_blank">dashboard</a>
-            <a class="btn btn-secondary my-1 text-uppercase" href="#" targert="_blank">mrt</a>
+                target="_blank">dashboard</a>
+            <a class="btn btn-secondary my-1 text-uppercase mr-2" href="#" target="_blank">mrt</a>
+            <a class="btn btn-success my-1 text-capitalize mr-2" href="{{ object.client_qaresults }}" target="_blank">QA
+                Results</a>
+            <a class="btn btn-pendo my-1 text-capitalize mr-2"
+                href="https://app.pendo.io/visitor/{{ object.client_ID }}" target="_blank">Pendo</a>
         </div>
 
         <h5 class="info-title-break mb-2 py-1">Salesforce:</h5>
 
         <p>Salesforce infomation goes here:</p>
-
-        <h5 class="info-title-break mb-2 py-1">Pendo:</h5>
-
-        <p>Pendo infomation goes here:</p>
 
         <h5 class="info-title-break mb-2 py-1">Jira Tickets:</h5>
 

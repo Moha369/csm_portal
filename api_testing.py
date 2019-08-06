@@ -1,20 +1,28 @@
-from jira.client import JIRA
 import requests
+import json
+import dateutil.parser
 
-jira = JIRA(options={'server': 'https://pixalate.atlassian.net'},
-            basic_auth=('paulb@pixalate.com', 'iqKaAYoiFfbY8P3uVrA6AEBB'))
+url = 'https://pixalate.atlassian.net/rest/api/2/search?jql=project=CS'
 
-# loop through all my CS Tickets
-all_my_projs = jira.search_issues(
-    'project=CS and reporter=5c9a07a6a54a69118b3211d6', maxResults=6)
+r = requests.get(url, auth=('paulb@pixalate.com', 'iqKaAYoiFfbY8P3uVrA6AEBB'))
 
-for paul in all_my_projs:
-    print(paul)
+data = r.json()
 
+client_name = 'Fox TV'
+client_ID = 'tv'
 
-comment = jira.comments('CS-3106')
-a = int(0)
-for i in comment:
-    if int(i.id) > a:
-        a = int(i.id)
-print(jira.comment('CS-3106', a).body)
+for ticket in data['issues']:
+    ticket_number = ticket['key']
+    summary = ticket['fields']['summary']
+    assignee = ticket['fields']['assignee']['name']
+    status = ticket['fields']['status']['name']
+    updated = dateutil.parser.parse(ticket['fields']['updated'])
+    ticket_url = 'https://pixalate.atlassian.net/browse/' + ticket['key']
+
+    client = ticket['fields']['customfield_10907'][0]['value']
+
+    if status != 'Closed' and client_name in client and client_ID.upper() in client:
+        print(
+            ticket_number, summary, assignee, status,
+            updated.strftime('%m/%d/%Y'), ticket_url, client
+        )

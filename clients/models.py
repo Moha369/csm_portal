@@ -11,6 +11,7 @@ class Post(models.Model):
         max_length=150, default="Linkedin Profile...")
     client_salesforceurl = models.CharField(
         max_length=150, default="Salesforce Profile...")
+    client_qaresults = models.CharField(max_length=100, default="")
     client_password = models.CharField(max_length=100, default="***")
     client_products = (
         ('Analytics', 'Analytics Only'),

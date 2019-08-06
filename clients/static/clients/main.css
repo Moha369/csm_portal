@@ -62,6 +62,12 @@ ol ul {
   letter-spacing: 1px;
 }
 
+.btn-pendo {
+  color: #fff;
+  background-color: #ff4876;
+  border-color: #ff4876;
+}
+
 .table td,
 .table th {
   vertical-align: middle !important;
