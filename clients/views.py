@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
@@ -30,50 +31,49 @@ class PostDetailView(DetailView):
     '''
     model = Post
     template_name = 'clients/post_detail.html'
-
-    # Test API ---
-
-    def coindesk(self):
-        response = requests.get(
-            'https://api.coindesk.com/v1/bpi/currentprice.json')
-        data = response.json()
-        return data['disclaimer']
-
-    def get_context_data(self, *args, **kwargs):
-        context = super(PostDetailView, self).get_context_data(*args, **kwargs)
-        context['base'] = self.coindesk()
-        return context
-
     #  Salesforce API ---
 
     #  Jira Cloud API ---
     def jira_tickets(self):
-        url = 'https://pixalate.atlassian.net/rest/api/2/search?jql=project=CS'
+        jira_url = 'https://pixalate.atlassian.net/rest/api/2/search?jql=project=CS'
 
-        r = requests.get(url, auth=('paulb@pixalate.com',
-                                    'iqKaAYoiFfbY8P3uVrA6AEBB'))
+        jira_r = requests.get(jira_url, auth=(
+            'paulb@pixalate.com', 'iqKaAYoiFfbY8P3uVrA6AEBB'))
 
-        data = r.json()
-        client_ID = ['client_ID']
+        data = jira_r.json()
+
+        # client_name = ['client_name']
+        # client_ID = ['client_ID']
+
+        client_name = 'Fox TV'
+        client_ID = 'tv'
 
         for ticket in data['issues']:
             ticket_number = ticket['key']
             summary = ticket['fields']['summary']
-            assignee = ticket['fields']['assignee']['name']
+            # assignee = ticket['fields']['assignee']['name']
             status = ticket['fields']['status']['name']
             updated = dateutil.parser.parse(ticket['fields']['updated'])
             ticket_url = 'https://pixalate.atlassian.net/browse/' + \
                 ticket['key']
-
             client = ticket['fields']['customfield_10907'][0]['value']
 
-            if ticket['fields']['status']['name'] != 'Closed' and client_ID.upper() in client:
-                return ticket_number, summary, assignee, status,
-                updated.strftime('%m/%d/%Y'), ticket_url, client
+            if status != 'Closed' and client_name in client or client_ID.upper() in client:
 
-    def get_jira_context(self, *args, **kwargs):
-        context = super(PostDetailView, self).get_jira_context(
-            **args, **kwargs)
+                ticket_dict = {
+                    'ticket_number': ticket_number,
+                    'summary': summary,
+                    # 'assignee': assignee,
+                    'status': status,
+                    'updated': updated,
+                    'url': ticket_url,
+                    'client_id': client
+                }
+
+                return ticket_dict
+
+    def get_jira_context(self, **kwargs):
+        context = super(PostDetailView, self).get_jira_context(**kwargs)
         context['jira_data'] = self.jira_tickets()
         return context
 
