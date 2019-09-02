@@ -81,12 +81,10 @@
         <h5 class="info-title-break mb-2 py-1">Salesforce:</h5>
 
         <p>Salesforce infomation goes here:</p>
+        <p>{{ base }}</p>
 
         <h5 class="info-title-break mb-2 py-1">Jira Tickets:</h5>
 
-        <h5>
-            jira data: <span>{{ jira_data }}</span>
-        </h5>
         <table class="table">
             <thead>
                 <tr>
@@ -98,17 +96,22 @@
                 </tr>
             </thead>
             <tbody>
-                {% for t in PostDetailView.jira_tickets %}
+                {% for ticket in jira_data %}
                 <tr>
-                    <td class="text-center">{{ t.ticket_number }}</td>
-                    <td><a href="{{ t.ticket_url }}">{{ t.summary }}</a></td>
-                    <td class="text-center">{{ t.assignee }}</td>
-                    <td class="text-center">{{ t.status }}</td>
-                    <td class="text-center">{{ t.updated }}</td>
+                    <td class="text-center">{{ ticket.key }}</td>
+                    <td><a href="{{ ticket.ticket_url }}">{{ ticket.fields.summary }}</a></td>
+                    <td class="text-center">{{ ticket.fields.assignee.name }}</td>
+                    <td class="text-center">{{ ticket.fields.status.name }}</td>
+                    <td class="text-center">{{ ticket.fields.updated }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
+
+        <div class="trello">
+            <h5>test pendo</h5>
+            {{ pendo_data }}
+        </div>
 
         <div class="border-top">
             <div class="edit-btns pt-2">

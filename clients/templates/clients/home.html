@@ -19,13 +19,11 @@
             <td class="text-uppercase">{{ post.client_ID }}</td>
             <td><a href="{% url 'post-detail' post.id %}">{{ post.client_name }}</a></td>
             <td>
-                <a href="{{ post.client_linkedinurl }}" class="mr-3">
-                    <img src="{% static 'clients/img/linkedin-icon.svg' %}" alt="Linkedin Logo" target="_blank"
-                        width="32">
+                <a href="{{ post.client_linkedinurl }}" class="mr-3" target="_blank">
+                    <img src="{% static 'clients/img/linkedin-icon.svg' %}" alt="Linkedin Logo" width="32">
                 </a>
-                <a href="{{ post.client_salesforceurl }}">
-                    <img src="{% static 'clients/img/salesforce_1.svg' %}" alt="Linkedin Logo" target="_blank"
-                        width="40">
+                <a href="{{ post.client_salesforceurl }}" target="_blank">
+                    <img src="{% static 'clients/img/salesforce_1.svg' %}" alt="Linkedin Logo" width="40">
                 </a>
             </td>
             <td>{{ post.date_posted|date:'F d, Y' }}</td>

@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'social_django',  # social auth
-    'algoliasearch_django'  # algolia search
+    # 'algoliasearch_django'  # algolia search
 ]
 
 MIDDLEWARE = [

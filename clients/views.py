@@ -1,11 +1,13 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post
+from . import api_calls
 import requests
 import json
+import datetime
+import time
 import dateutil.parser
 
 
@@ -31,51 +33,17 @@ class PostDetailView(DetailView):
     '''
     model = Post
     template_name = 'clients/post_detail.html'
-    #  Salesforce API ---
 
-    #  Jira Cloud API ---
-    def jira_tickets(self):
-        jira_url = 'https://pixalate.atlassian.net/rest/api/2/search?jql=project=CS'
+    def render_to_response(self, context, **response_kwargs):
+        # pendo api
+        pendo_result = api_calls.pendo_data()
+        context['pendo_data'] = pendo_result
 
-        jira_r = requests.get(jira_url, auth=(
-            'paulb@pixalate.com', 'iqKaAYoiFfbY8P3uVrA6AEBB'))
+        # jira api
+        jira_result = api_calls.jira_data()
+        context['jira_data'] = jira_result['issues']
 
-        data = jira_r.json()
-
-        # client_name = ['client_name']
-        # client_ID = ['client_ID']
-
-        client_name = 'Fox TV'
-        client_ID = 'tv'
-
-        for ticket in data['issues']:
-            ticket_number = ticket['key']
-            summary = ticket['fields']['summary']
-            # assignee = ticket['fields']['assignee']['name']
-            status = ticket['fields']['status']['name']
-            updated = dateutil.parser.parse(ticket['fields']['updated'])
-            ticket_url = 'https://pixalate.atlassian.net/browse/' + \
-                ticket['key']
-            client = ticket['fields']['customfield_10907'][0]['value']
-
-            if status != 'Closed' and client_name in client or client_ID.upper() in client:
-
-                ticket_dict = {
-                    'ticket_number': ticket_number,
-                    'summary': summary,
-                    # 'assignee': assignee,
-                    'status': status,
-                    'updated': updated,
-                    'url': ticket_url,
-                    'client_id': client
-                }
-
-                return ticket_dict
-
-    def get_jira_context(self, **kwargs):
-        context = super(PostDetailView, self).get_jira_context(**kwargs)
-        context['jira_data'] = self.jira_tickets()
-        return context
+        return super().render_to_response(context, **response_kwargs)
 
 
 class PostCreateView(LoginRequiredMixin, CreateView):
