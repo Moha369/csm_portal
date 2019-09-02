@@ -7,7 +7,6 @@ def jira_data():
     r = requests.get(url, auth=(
         'paulb@pixalate.com', 'ZgQI2j1wrMOle9z1iWVK9747'))
     data = r.json()
-    print(json.dumps(data, indent=2))
     return data
 
 
@@ -22,5 +21,4 @@ def pendo_data():
     r = requests.get(url, headers=headers)
     data = r.json()
     first_visit = data['metadata']['auto']['firstvisit']
-    print(first_visit)
     return first_visit
